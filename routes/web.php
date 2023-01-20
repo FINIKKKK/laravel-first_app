@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::get('/about', [MainController::class, 'about']);
 
+Route::get('/reviews', [MainController::class, 'reviews']);
+Route::post('/reviews/check', [MainController::class, 'reviews_check']);
+
 // Route::get('/user/{id}/{name}', function ($id, $name) {
 //     return 'ID: ' . $id . '; NAME: ' . $name;
 // });
