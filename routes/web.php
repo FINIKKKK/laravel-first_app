@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', [MainController::class, 'home']);
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [MainController::class, 'about']);
 
+// Route::get('/user/{id}/{name}', function ($id, $name) {
+//     return 'ID: ' . $id . '; NAME: ' . $name;
+// });
