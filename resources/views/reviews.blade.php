@@ -27,4 +27,15 @@
   <button type="submit" name="send" class="btn btn-primary">Создать</button>
 </form>
 
+<h3>Отзывы</h3>
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  @foreach($reviews as $review)
+  <div class="col d-flex align-items-start" style="width: 30%; flex-direction: column;">
+    <h3 class="fs-2">{{$review->subject}}</h3>
+    <b>{{$review->email}}</b>
+    <p>{{$review->message}}</p>
+  </div>
+  @endforeach
+</div>
+
 @endsection
